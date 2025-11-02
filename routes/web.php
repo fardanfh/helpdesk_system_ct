@@ -42,6 +42,10 @@ use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\PriorityController;
 
+// Track and print endpoints used by landing page
+Route::get('/track-laporan/{no_laporan}', [LaporanController::class, 'track'])->name('laporans.track');
+Route::get('/laporan/print/{id}', [LaporanController::class, 'print'])->name('laporans.print');
+
 
 // Authentication routes (simple session-based admin login)
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -55,7 +59,7 @@ Route::get('/home', function () {
     // keep /home for backward compatibility but point to landing as well
     return view('landing.index');
 });
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard')->middleware('admin');
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard')->middleware('pic');
 
 // Resource routes
 Route::resource('admins', AdminController::class);

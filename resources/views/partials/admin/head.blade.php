@@ -14,6 +14,8 @@
         content="Bootstrap admin template, Dashboard UI Kit, Laravel Dashboard, Backend Panel"
     />
     <meta name="author" content="Phoenixcoded" />
+    <!-- CSRF token for AJAX -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- [Favicon] -->
     <link rel="icon" href="{{ asset('assets/images/favicon.svg') }}" type="image/x-icon" />
@@ -27,6 +29,8 @@
     <link rel="stylesheet" href="{{ asset('assets/fonts/feather.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/fonts/fontawesome.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/fonts/material.css') }}" />
+    <!-- Bootstrap Icons (used by some badges) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 
     <!-- [Template CSS Files] -->
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/style.css') }}" />
